@@ -31,7 +31,7 @@ if [ ! -f /initFinished ]; then
         --web-server-config=apache
 
     # Install Kitodo.Presentation and DFG-Viewer with OCR-On-Demand:
-    echo -e "${CLR_B}[MAIN] Install Presentation and DFG-Viewer with OCR-On-Demand:${NC}"
+    echo -e "${CLR_B}[MAIN] Install Presentation and DFG-Viewer with OCR-On-Demand (Ft):${NC}"
     composer config platform.php 7.4
     jq '.repositories += [{"type": "git", "url": "https://github.com/bfallert/dfg-viewer.git" }, {"type": "git", "url": "https://github.com/csidirop/kitodo-presentation.git"}, {"type": "git", "url": "https://github.com/csidirop/slub_digitalcollections.git" }] | .require += {"bfallert/dfgviewer": "dev-feature/submenu-ocr-on-demand"} | . += {"minimum-stability": "dev"}' composer.json > composer-edit.json
     mv composer.json composer.json.bak
