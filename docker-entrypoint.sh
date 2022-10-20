@@ -136,6 +136,10 @@ if [ ! -f /initFinished ]; then
     # Check tesseract languages:
     echo -e "${CLR_B}[MAIN] Install Tesseract v5:${NC}"
     tesseract --list-langs
+    
+    echo -e "${CLR_B}[MAIN] install nodejs npm:${NC}"
+    apt-get update
+    apt-get install nodejs npm -y
 
     # Cleanup:
     echo -e "${CLR_B}[MAIN] cleanup:${NC}"
